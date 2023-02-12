@@ -28,6 +28,10 @@ function App() {
   const calculationHandler = () => {
 
     let check = state.filter(function(element) {
+      if(element === ".") {
+        setMyCheck("not");
+        return;
+      }
       return isNaN(element);
     }).length > 1;
 
