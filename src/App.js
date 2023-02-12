@@ -5,7 +5,7 @@ import './App.css';
 function App() {
 
   const [state, setState] = useState([]);
-  const [myCheck, setMyCheck] = useState("yes");
+  const [myCheck, setMyCheck] = useState("");
 
   const valueHandler = (e) => {
     const val = e.target.getAttribute("data");
@@ -35,6 +35,8 @@ function App() {
       setMyCheck("not");
       return;
     }
+
+    setMyCheck("");
 
     const h = state.find(function(item) {
       if(item === ".") {
