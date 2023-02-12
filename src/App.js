@@ -1,30 +1,28 @@
-
-import { type } from '@testing-library/user-event/dist/type';
 import { useState } from 'react';
 import './App.css';
 
 
 function App() {
 
-  const [state, setstate] = useState([]);
+  const [state, setState] = useState([]);
   const [myCheck, setMyCheck] = useState("yes");
 
   const valueHandler = (e) => {
     const val = e.target.getAttribute("data");
-    setstate([...state, val]);
+    setState([...state, val]);
   }
   
   const operationHandler = (e) => {
     const op = e.target.getAttribute("data");
-    setstate([...state ,op]);
+    setState([...state ,op]);
   }
 
   const deleteHandler = () => {
-    setstate(n => n.slice(0, -1));
+    setState(n => n.slice(0, -1));
   }
 
   const nullHandler = () => {
-    setstate([]);
+    setState([]);
   }
 
   const calculationHandler = () => {
@@ -72,7 +70,7 @@ function App() {
     
     console.log(cal);
     const result = cal.toString().split("");
-    setstate(result)
+    setState(result)
   }
 
   
